@@ -1,0 +1,22 @@
+{
+  "name": "carlo/clinica_prueba",
+  "description": "Proyecto para clinica",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "MVC\\": "./",
+      "Controllers\\": "./controllers",
+      "Model\\": "./models",
+      "Classes\\": "./classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "Carlos Gonzalez Teran"
+    }
+  ],
+  "require": {
+    "setasign/fpdf": "^1.8",
+    "setasign/fpdi": "^2.6"
+  }
+}
