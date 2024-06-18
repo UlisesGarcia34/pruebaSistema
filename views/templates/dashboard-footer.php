@@ -7,8 +7,3 @@
       </div>
   </footer>
 
-  <?php
-
-    $script = '<script src="js/1.js"></script>'
-
-    ?>

@@ -59,6 +59,34 @@ class DashboardController{
             'apellido' => $apellido
         ]);
     }
+    public static function consultar_gabinete(Router $router)
+    {
+        isAuth();
+
+        $id = $_SESSION['id'];
+        $nombre = $_SESSION['nombre'];
+        $apellido = $_SESSION['apellido'];
+
+        $router->render('gabinete/consultar', [
+            'titulo' => 'Consultar Gabinete',
+            'nombre' => $nombre,
+            'apellido' => $apellido
+        ]);
+    }
+    public static function consultar_cirugias(Router $router)
+    {
+        isAuth();
+
+        $id = $_SESSION['id'];
+        $nombre = $_SESSION['nombre'];
+        $apellido = $_SESSION['apellido'];
+
+        $router->render('cirugias/consultarCirugias', [
+            'titulo' => 'Consultar Cirugias',
+            'nombre' => $nombre,
+            'apellido' => $apellido
+        ]);
+    }
 
   
 }

@@ -1502,43 +1502,65 @@ h6 .badge {
 /* 3.18 Navbar */
 .navbar {
   height: 70px;
-  left: 250px;
-  right: 5px;
-  position: absolute;
-  z-index: 890;
-  background-color: transparent; }
-  .navbar.active {
-    background-color: #e2e4ec;
-    box-shadow: rgba(200, 201, 204, 0.2) rgba(0, 0, 0, 0.03); }
+  background-color: #d4d8dd;
+  display: flex;
+  align-items: center;
+  padding-left: 15px; /* Ajuste para alinear a la izquierda en pantallas más grandes */
+  padding-right: 15px; /* Ajuste para alinear a la izquierda en pantallas más grandes */
+}
 
-  /* CODIGO DEL HEADER DEL DASHBOARD*/
-.navbar-bg {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 115px;
-  background-color: #e2e2e6;
-  z-index: -1; }
 
-.navbar {
-  align-items: center; }
-  .navbar .navbar-brand {
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700; }
+.navbar .navbar-brand {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.navbar .navbar-nav {
+  margin-left: auto; /* Esto alinea los elementos a la derecha */
+}
+
+.navbar .nav-link {
+  color: #0e0d0d;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 100%;
+}
+
+.navbar .nav-link.nav-link-user {
+  color: #0e0d0d;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 600;
+}
+
+.navbar .nav-link.nav-link-img {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding-left: 5px; /* Ajuste adicional para pantallas medianas */
+    padding-right: 5px; /* Ajuste adicional para pantallas medianas */
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: column; /* Cambia la dirección de los elementos en pantallas más pequeñas */
+    align-items: flex-start; /* Alinea los elementos a la izquierda en pantallas más pequeñas */
+  }
+
   .navbar .form-inline .form-control {
-    background-color: #fff;
-    border-color: transparent;
-    padding-left: 20px;
-    padding-right: 0;
-    margin-right: -6px;
-    min-height: 46px;
-    font-weight: 500;
-    border-radius: 3px 0 0 3px;
-    transition: all 1s; }
+    width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+    margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
+  }
+}
+
     .navbar .form-inline .form-control:focus, .navbar .form-inline .form-control:focus + .btn {
       position: relative;
       z-index: 9001; }
@@ -1734,6 +1756,7 @@ h6 .badge {
       flex-direction: row; }
 
   .navbar-expand-lg .navbar-nav .dropdown-menu-right {
+    background-color: #000;
     right: 0;
     left: auto; } }
 /* 3.19 Dropdown */

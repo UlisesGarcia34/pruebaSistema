@@ -3,7 +3,7 @@ $db = mysqli_connect(
     'localhost',
     'root',
     'root',
-    'mira_prueba'
+    'mirasistem'
 
 );
 

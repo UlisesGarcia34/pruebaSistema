@@ -97,13 +97,22 @@
     <script src="modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
     <script src="modules/jquery-ui/jquery-ui.min.js"></script>
 
+
     <!-- Page Specific JS File -->
     <script src="js/page/modules-toastr.js"></script>
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- Template JS File -->
     <script src="js/scripts.js"></script>
     <script src="js/custom.js"></script>
-    <?php echo $script ?? ''; ?>
+    <script src="js/1.js"></script>
+    <script src="js/2.js"></script>
+    <script src="js/3.js"></script>
+    <script src="js/4.js"></script>
+    <script src="js/5.js"></script>
+
+
 </body>
 
 </html>

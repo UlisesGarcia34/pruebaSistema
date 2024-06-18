@@ -55,6 +55,12 @@ class ActiveRecord
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
+    public static function orderBy($columna, $orden)
+    {
+        $query = "SELECT ${columna} FROM " . static::$tabla . " ORDER BY ${columna} ${orden} LIMIT 1";
+        $resultado = self::consultarSQL($query);
+        return array_shift($resultado);
+    }
 
     // Busca un registro por su id
     public static function find($id)
@@ -83,6 +89,14 @@ class ActiveRecord
     public static function belongsTo($columna, $valor)
     {
         $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    // Busca todos los registros que pertenecen a un id 
+    public static function unRegistro($fila,$columna, $valor)
+    {
+        $query = "SELECT ${fila} FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }

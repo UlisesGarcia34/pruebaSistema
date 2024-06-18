@@ -7,30 +7,50 @@ class Contrato extends ActiveRecord
 {
 
     protected static $tabla = 'contrato';
-    protected static $columnasDB = ['id', 'contrato_no', 'representado', 'pdf','escritura_no'];
+    protected static $columnasDB = ['id', 'contrato_no', 'enFecha', 'pdf','nombreSol','domicilioSol','telefonoSol','nombrePac','domicilioPac','telefonoPac'];
 
     public $id;
     public $contrato_no;
-    public $representado;
+    public $enFecha;
     public $pdf;
-    public $escritura_no;
+    public $nombreSol;
+    public $domicilioSol;
+    public $telefonoSol;
+    public $nombrePac;
+    public $domicilioPac;
+    public $telefonoPac;
  
 
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
         $this->contrato_no = $args['contrato_no'] ?? '';
-        $this->representado = $args['representado'] ?? '';
+        $this->enFecha = $args['enFecha'] ?? '';
         $this->pdf = $args['pdf'] ?? null;
-        $this->escritura_no = $args['escritura_no'] ?? null;
+        $this->nombreSol = $args['nombreSol'] ?? null;
+        $this->domicilioSol = $args['domicilioSol'] ?? null;
+        $this->telefonoSol = $args['telefonoSol'] ?? null;
+        $this->nombrePac = $args['nombrePac'] ?? null;
+        $this->domicilioPac = $args['domicilioPac'] ?? null;
+        $this->telefonoPac = $args['telefonoPac'] ?? null;
     }
 
     public function validarFormulario()
     {
-        if (!$this->representado) {
-            self::$alertas[] = 'El campo representado es obligatorio';
-        }elseif (!$this->escritura_no) {
-            self::$alertas[] = 'El campo "escritura publica No." es obligatorio';
+        if (!$this->enFecha || $this->enFecha == "undefined NaN de undefined del NaN" ) {
+            self::$alertas[] = 'La fecha en la que se suscribe el contrato es obligatoria';
+        }elseif (!$this->nombreSol) {
+            self::$alertas[] = 'El nombre del solicitante del servicio es obligatorio';
+        } elseif (!$this->domicilioSol) {
+            self::$alertas[] = 'El domicilio del solicitante del servicio es obligatorio';
+        } elseif (!$this->telefonoSol) {
+            self::$alertas[] = 'El telefono del solicitante del servicio es obligatorio';
+        } elseif (!$this->nombrePac) {
+            self::$alertas[] = 'El nombre del paciente del servicio es obligatorio';
+        } elseif (!$this->domicilioPac) {
+            self::$alertas[] = 'El domicilio telefono del paciente del servicio es obligatorio';
+        } elseif (!$this->telefonoPac) {
+            self::$alertas[] = 'El telefono del paciente del servicio es obligatorio';
         }
         
 
